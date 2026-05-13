@@ -5,6 +5,23 @@ const meter = document.querySelector(".scroll-meter span");
 const menuToggle = document.querySelector(".menu-toggle");
 const topNav = document.querySelector(".top-nav");
 
+const trackContent = {
+  revitalize: {
+    tag: "Line One",
+    title: "从群众足球到乡村振兴的五个入口",
+    body:
+      "“村超”通过群众参与聚集人气，通过民族文化形成特色，通过文旅消费带动产业，通过数字传播扩大影响，通过多主体参与提升基层治理能力。",
+    points: ["产业振兴", "文化振兴", "人才回流", "组织协同", "形象提升"],
+  },
+  reconstruction: {
+    tag: "Line Two",
+    title: "从受灾赛事到民族地区恢复能力的重建链条",
+    body:
+      "洪涝灾害后，民族体育赛事的重建不能只理解为重新开赛，而要同时完成场地设施修复、公共服务恢复、组织体系重建、文化场景回归、市场主体复业和社会信心修复。",
+    points: ["空间修复", "秩序恢复", "产业复业", "文化回归", "信心重建", "长期韧性"],
+  },
+};
+
 const rebuildContent = {
   space: {
     title: "空间修复：球场成为重建进度的公共信号",
@@ -141,6 +158,26 @@ document.querySelectorAll("[data-count]").forEach((el) => {
   if (el.getBoundingClientRect().top < window.innerHeight) animateCount(el);
 });
 
+document.querySelectorAll(".track-btn").forEach((button) => {
+  button.addEventListener("click", () => {
+    document.querySelectorAll(".track-btn").forEach((item) => {
+      item.classList.remove("active");
+      item.setAttribute("aria-selected", "false");
+    });
+    button.classList.add("active");
+    button.setAttribute("aria-selected", "true");
+    const data = trackContent[button.dataset.track];
+    document.querySelector("#track-panel").innerHTML = `
+      <p class="tag">${data.tag}</p>
+      <h3>${data.title}</h3>
+      <p>${data.body}</p>
+      <div class="track-keywords" aria-label="主线关键词">
+        ${data.points.map((item) => `<span>${item}</span>`).join("")}
+      </div>
+    `;
+  });
+});
+
 document.querySelectorAll(".rebuild-step").forEach((button) => {
   button.addEventListener("click", () => {
     document.querySelectorAll(".rebuild-step").forEach((item) => {
@@ -190,7 +227,7 @@ document.querySelectorAll("[data-boundary]").forEach((button) => {
 });
 
 document
-  .querySelectorAll(".thesis-card, .question-stack article, .foundation-grid article, .mechanism-card, .boundary-panel, .rebuild-copy, .rebuild-stats article")
+  .querySelectorAll(".thesis-card, .track-panel, .question-stack article, .foundation-grid article, .mechanism-card, .boundary-panel, .rebuild-copy, .rebuild-stats article")
   .forEach((card) => {
     card.addEventListener("pointermove", (event) => {
       const rect = card.getBoundingClientRect();
