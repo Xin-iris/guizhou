@@ -5,135 +5,97 @@ const meter = document.querySelector(".scroll-meter span");
 const menuToggle = document.querySelector(".menu-toggle");
 const topNav = document.querySelector(".top-nav");
 
-const modelContent = {
-  self: {
-    title: "村民自治",
+const rebuildContent = {
+  space: {
+    title: "空间修复：球场成为重建进度的公共信号",
     body:
-      "赛事从村寨内部生长出来，村民既是球员、观众，也是组织者和传播者。群众基础让赛事保持“草根感”和高黏性。",
-    list: ["自下而上形成参与热情", "村寨荣誉感转化为组织力", "低成本、高参与、强认同"],
-  },
-  guide: {
-    title: "专业指导",
-    body:
-      "政府与体育部门提供赛程、安全、规则、基础设施等托底服务，让草根赛事保留乡土味的同时具备可持续运行能力。",
-    list: ["规则规范与赛事秩序", "公共服务与场地保障", "风险管理和赛事升级"],
-  },
-  culture: {
-    title: "民族文化",
-    body:
-      "侗族大歌、苗族芦笙舞、民族服饰、村寨礼俗与赛场同频出现，使体育画面具有鲜明的贵州识别度。",
-    list: ["非遗展演成为传播内容", "体育流量反哺文化展示", "乡土审美形成差异化记忆"],
+      "“村超”球场承载比赛、展演、游客集聚和夜间消费。灾后球场修复不只是设施修复，也是在向村民、游客和商户传递“榕江正在恢复”的确定性。",
   },
   industry: {
-    title: "产业转化",
+    title: "产业复苏：以赛事重启恢复人流和消费场景",
     body:
-      "赛事把流量导向旅游、餐饮、住宿、农特产品和品牌合作，形成从公共热度到县域经济的转化链条。",
-    list: ["农产品获得新销售场景", "文旅线路被重新组织", "企业合作进入县域平台"],
+      "餐饮、住宿、摊位、农特产品、非遗文创和直播带货高度依赖人流。赛事重启为游客重返提供理由，为商户复业提供预期，也为产品销售重新搭建场景。",
   },
-  governance: {
-    title: "基层治理",
+  mind: {
+    title: "心理重建：把灾后叙事转化为共同体叙事",
     body:
-      "大型群众赛事要求多主体协作，也放大了乡村公共事务的组织能力。灾后重建中的联动恢复就是典型检验。",
-    list: ["政府、村民、企业协同", "公共服务能力被赛事锻炼", "乡村共同体认同增强"],
+      "感恩巡游、文艺演出、民族歌舞和群众参与，使灾后恢复不只是“把空间修好”，也在修复不确定感、焦虑感和地方发展信心。",
   },
-};
-
-const factContent = {
-  teams: "2026年第四届贵州“村超”在榕江开赛，137支村级球队从田间地头、市井街巷集结。",
-  matches: "据公开报道，本届赛事设置422场预选赛，热度不只集中在决赛，而是把更多村寨卷入持续参与。",
-  global: "榕江村超也延展为开放交流平台，公开资料提到已有62个国家和地区的球队参与相关交流活动。",
-};
-
-const tabContent = {
-  football: {
-    title: "村超：足球作为最大公约数",
+  govern: {
+    title: "协同治理：政府兜底、群众自治、市场参与、社会互助",
     body:
-      "足球门槛低、观看性强、传播画面天然热烈，适合把村寨荣誉、民族展演和游客消费集中到一个公共赛场。",
-    points: ["村寨球队", "非遗展演", "文旅消费"],
-    coords: [
-      ["30%", "38%"],
-      ["63%", "28%"],
-      ["51%", "66%"],
-    ],
-  },
-  basketball: {
-    title: "村BA：篮球连接农闲节庆",
-    body:
-      "篮球场更紧凑，观众与球员距离近，适合形成“围场观看、即时欢呼、节庆交流”的公共生活氛围。",
-    points: ["吃新节传统", "全民围观", "大区联赛"],
-    coords: [
-      ["34%", "34%"],
-      ["62%", "48%"],
-      ["45%", "72%"],
-    ],
-  },
-  plus: {
-    title: "村+拓展：一地一策的赛事生长",
-    body:
-      "不同地区可以把排球、龙舟、跑步、民俗竞技等本地优势接入“村+”框架，重点是群众主体、文化符号和产业接口三者同时成立。",
-    points: ["本地资源", "群众基础", "产业接口"],
-    coords: [
-      ["28%", "58%"],
-      ["55%", "35%"],
-      ["70%", "66%"],
-    ],
+      "灾后重建需要基础设施、公共安全、市场秩序、交通组织、传播回应等多线协同。“村+”模式把多主体放进同一个公共场景，形成“以赛促建、以建兴赛”的恢复路径。",
   },
 };
 
-const impactContent = {
-  economy: {
-    title: "经济发展",
+const mechanismContent = {
+  villager: {
+    title: "村民主体机制：从“被治理对象”到“重建行动者”",
     body:
-      "赛事带来游客、消费、农产品曝光和市场主体增长，形成“流量进入县域，收益回到乡土”的转化路径。",
+      "村民既是球员、观众、志愿者，也是摊主、主播、非遗展演者和民宿经营者。赛事情感归属和利益关联，使其更愿意参与清淤、复业、接待、宣传和秩序维护。",
+    list: ["核心主体：村民、球员、摊主、主播、非遗传承人", "作用逻辑：共同参与形成内生动力，避免外来项目悬浮", "振兴指向：组织振兴与人才振兴"],
   },
   culture: {
-    title: "文化传承",
+    title: "文化认同机制：以民族文化修复灾后共同体",
     body:
-      "非遗与民族文化不再只停留在展陈空间，而是在赛事现场和短视频传播中被看见、被参与、被再创作。",
+      "足球竞技与侗族大歌、苗族芦笙舞、民族服饰、地方美食和非遗展演共同出现，使灾后重启不是单纯恢复比赛，而是恢复能够表达地方身份和共同体情感的文化场域。",
+    list: ["核心主体：村寨、民族文化传承人、文艺团队", "作用逻辑：民族文化符号形成地方品牌和灾后情感修复", "振兴指向：文化振兴与共同体意识"],
+  },
+  industry: {
+    title: "产业转化机制：从赛事流量到县域“超经济”",
+    body:
+      "“村超”的经济意义不在门票收入，而在于开放观赛后游客在餐饮、住宿、交通、购物、娱乐、研学、电商等环节形成综合消费。",
+    list: ["核心主体：商户、企业、合作社、电商平台", "作用逻辑：将赛事流量转化为吃住行游购娱综合消费", "振兴指向：产业振兴、就业扩大和市场主体增长"],
+  },
+  digital: {
+    title: "数字传播机制：从“被看见”到“可持续被连接”",
+    body:
+      "榕江本土直播团队和新媒体账号让村民、返乡青年、摊主、球员都可能成为传播者。灾后，这一机制既传播救援需求，也传播复工复产和赛事重启。",
+    list: ["核心主体：本土直播团队、新媒体账号、游客 UGC", "作用逻辑：低成本高频传播维持关注和信任", "振兴指向：拓展市场半径，吸引返乡创业和外部资源"],
   },
   governance: {
-    title: "基层治理",
+    title: "协同治理机制：多元主体互补，而非单一主体包办",
     body:
-      "赛事组织锻炼了村寨协商、志愿服务、公共安全、交通疏导和灾后恢复能力，治理逻辑从管理走向共建。",
+      "政府负责规则、设施、安全、交通、市场秩序和灾后统筹；村民参与组织、志愿服务、经营接待和传播；企业参与品牌开发、电商运营、文旅产品和赞助支持。",
+    list: ["核心主体：政府、村民、企业、社会力量", "作用逻辑：政府兜底、群众自治、市场运作、社会互助互补", "振兴指向：治理韧性和灾后恢复效率"],
   },
-  identity: {
-    title: "乡村认同",
+  ecology: {
+    title: "生态韧性机制：把安全发展纳入“村+”模式",
     body:
-      "村寨之间的竞争和助威，让年轻人重新看见家乡的公共舞台，也让外地游客把贵州乡村视作鲜活目的地。",
+      "洪水提醒我们，乡村文旅 IP 越火，越需要完善防洪排涝、交通疏导、场馆安全、医疗救援、食品安全、舆情应对和保险机制。",
+    list: ["核心主体：政府部门、社区、文旅经营者", "作用逻辑：防灾设施、应急预案与文旅空间改造结合", "振兴指向：生态宜居与安全发展"],
   },
 };
 
-const rebuildContent = {
-  relief: {
-    title: "应急救援：村超流量变成八方支援的入口",
+const boundaryContent = {
+  copy: {
+    title: "复制机制，而不是复制名称",
     body:
-      "洪水发生后，救援队伍、援建力量和社会捐助迅速进入榕江。已有的“村超”关注度让灾情更快被看见，也让外部资源更快汇聚到县城恢复中。",
+      "各地应从本地最有群众基础的体育、节庆、手工艺、音乐、饮食或农事活动出发，形成“村BA”“村排”“村跑”“村歌”“村T”等差异化形态。",
+    points: ["真实文化", "群众主体", "产业承接", "政府兜底"],
   },
-  repair: {
-    title: "场地修复：公共空间先恢复，群众信心才有落点",
+  risk: {
+    title: "推广边界：防止过度商业化、同质化与安全风险",
     body:
-      "球场清淤、草坪铺设、设施检修和安全保障同步推进。村超球场不只是比赛场地，更是榕江重新组织公共生活的象征性空间。",
+      "如果企业营销、明星流量和外来资本喧宾夺主，赛事可能从公共文化活动变成消费景观；如果缺乏真实文化基础和群众参与，也容易变成短期招商或表演工程。",
+    points: ["过度商业化", "简单模仿", "承载超限", "收益不透明"],
   },
-  market: {
-    title: "商户复业：把复赛人流导回烟火气",
+  policy: {
+    title: "面向灾后重建的政策建议",
     body:
-      "赛事重启前，周边餐饮住宿商户加速复业。游客回流、订单恢复、农特产品重新进入消费场景，让灾后恢复从基础设施延伸到生计恢复。",
-  },
-  restart: {
-    title: "赛事重启：用一场球赛重新确认榕江还在向前",
-    body:
-      "7月下旬，“村超”以感恩和雄起为主题回归。球赛、巡游、民族文化展演与县域消费一起构成了灾后振兴的公开表达。",
+      "建立“赛事空间+应急空间”一体化规划，并将球场修复、商户复业、农产品供应、交通接驳、住宿安全、网络传播和志愿服务纳入统一恢复清单。",
+    points: ["应急空间规划", "灾后恢复清单", "小微主体支持", "数字人才培养", "文化保护规则"],
   },
 };
 
 function setActiveLink(id) {
   [...navLinks, ...dotLinks].forEach((link) => {
-    const active = link.getAttribute("href") === `#${id}`;
-    link.classList.toggle("active", active);
+    link.classList.toggle("active", link.getAttribute("href") === `#${id}`);
   });
 }
 
 function updateProgress() {
+  if (!meter) return;
   const max = document.documentElement.scrollHeight - window.innerHeight;
   const progress = max > 0 ? window.scrollY / max : 0;
   meter.style.width = `${Math.min(100, Math.max(0, progress * 100))}%`;
@@ -166,79 +128,17 @@ const observer = new IntersectionObserver(
       setActiveLink(entry.target.id);
     });
   },
-  { threshold: 0.42 },
+  { threshold: 0.36 },
 );
 
 sections.forEach((section) => observer.observe(section));
 
 document.querySelectorAll(".reveal").forEach((el) => {
-  const rect = el.getBoundingClientRect();
-  if (rect.top < window.innerHeight) el.classList.add("visible");
+  if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add("visible");
 });
 
 document.querySelectorAll("[data-count]").forEach((el) => {
   if (el.getBoundingClientRect().top < window.innerHeight) animateCount(el);
-});
-
-document.querySelectorAll(".node").forEach((node) => {
-  node.addEventListener("click", () => {
-    document.querySelectorAll(".node").forEach((item) => item.classList.remove("active"));
-    node.classList.add("active");
-    const data = modelContent[node.dataset.node];
-    const card = document.querySelector("#node-card");
-    card.innerHTML = `
-      <p class="tag">当前机制</p>
-      <h3>${data.title}</h3>
-      <p>${data.body}</p>
-      <ul>${data.list.map((item) => `<li>${item}</li>`).join("")}</ul>
-    `;
-  });
-});
-
-document.querySelectorAll(".fact").forEach((button) => {
-  button.addEventListener("click", () => {
-    document.querySelectorAll(".fact").forEach((item) => item.classList.remove("active"));
-    button.classList.add("active");
-    document.querySelector("#fact-detail").textContent = factContent[button.dataset.fact];
-  });
-});
-
-document.querySelectorAll(".player").forEach((player) => {
-  player.addEventListener("click", () => {
-    document.querySelector("#court-pop").textContent = player.dataset.pop;
-  });
-});
-
-document.querySelectorAll(".tab").forEach((tab) => {
-  tab.addEventListener("click", () => {
-    document.querySelectorAll(".tab").forEach((item) => {
-      item.classList.remove("active");
-      item.setAttribute("aria-selected", "false");
-    });
-    tab.classList.add("active");
-    tab.setAttribute("aria-selected", "true");
-    const data = tabContent[tab.dataset.tab];
-    const points = data.points
-      .map((point, index) => {
-        const [x, y] = data.coords[index];
-        return `<span style="--x: ${x}; --y: ${y}">${point}</span>`;
-      })
-      .join("");
-    document.querySelector("#tab-panel").innerHTML = `
-      <h3>${data.title}</h3>
-      <p>${data.body}</p>
-      <div class="mini-map">${points}</div>
-    `;
-  });
-});
-
-document.querySelectorAll(".wheel-item").forEach((item) => {
-  item.addEventListener("click", () => {
-    document.querySelectorAll(".wheel-item").forEach((el) => el.classList.remove("active"));
-    item.classList.add("active");
-    const data = impactContent[item.dataset.impact];
-    document.querySelector("#impact-copy").innerHTML = `<h3>${data.title}</h3><p>${data.body}</p>`;
-  });
 });
 
 document.querySelectorAll(".rebuild-step").forEach((button) => {
@@ -254,34 +154,72 @@ document.querySelectorAll(".rebuild-step").forEach((button) => {
   });
 });
 
-document.querySelectorAll(".model-card, .story-panel, .tab-panel, .impact-numbers article, .rebuild-copy, .rebuild-stats article").forEach((card) => {
-  card.addEventListener("pointermove", (event) => {
-    const rect = card.getBoundingClientRect();
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
-    const rotateX = ((y / rect.height) - 0.5) * -4;
-    const rotateY = ((x / rect.width) - 0.5) * 4;
-    card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-  });
-  card.addEventListener("pointerleave", () => {
-    card.style.transform = "";
+document.querySelectorAll(".mechanism-btn").forEach((button) => {
+  button.addEventListener("click", () => {
+    document.querySelectorAll(".mechanism-btn").forEach((item) => {
+      item.classList.remove("active");
+      item.setAttribute("aria-selected", "false");
+    });
+    button.classList.add("active");
+    button.setAttribute("aria-selected", "true");
+    const data = mechanismContent[button.dataset.mechanism];
+    document.querySelector("#mechanism-card").innerHTML = `
+      <p class="tag">核心机制</p>
+      <h3>${data.title}</h3>
+      <p>${data.body}</p>
+      <ul>${data.list.map((item) => `<li>${item}</li>`).join("")}</ul>
+    `;
   });
 });
 
-document.querySelector(".source-toggle").addEventListener("click", (event) => {
+document.querySelectorAll("[data-boundary]").forEach((button) => {
+  button.addEventListener("click", () => {
+    document.querySelectorAll("[data-boundary]").forEach((item) => {
+      item.classList.remove("active");
+      item.setAttribute("aria-selected", "false");
+    });
+    button.classList.add("active");
+    button.setAttribute("aria-selected", "true");
+    const data = boundaryContent[button.dataset.boundary];
+    document.querySelector("#boundary-panel").innerHTML = `
+      <h3>${data.title}</h3>
+      <p>${data.body}</p>
+      <div class="principle-grid">${data.points.map((item) => `<span>${item}</span>`).join("")}</div>
+    `;
+  });
+});
+
+document
+  .querySelectorAll(".thesis-card, .question-stack article, .foundation-grid article, .mechanism-card, .boundary-panel, .rebuild-copy, .rebuild-stats article")
+  .forEach((card) => {
+    card.addEventListener("pointermove", (event) => {
+      const rect = card.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+      const rotateX = (y / rect.height - 0.5) * -4;
+      const rotateY = (x / rect.width - 0.5) * 4;
+      card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+    card.addEventListener("pointerleave", () => {
+      card.style.transform = "";
+    });
+  });
+
+const sourceToggle = document.querySelector(".source-toggle");
+sourceToggle?.addEventListener("click", (event) => {
   const list = document.querySelector(".source-list");
   const open = list.hasAttribute("hidden");
   list.toggleAttribute("hidden", !open);
   event.currentTarget.setAttribute("aria-expanded", String(open));
 });
 
-menuToggle.addEventListener("click", () => {
+menuToggle?.addEventListener("click", () => {
   const open = !topNav.classList.contains("open");
   topNav.classList.toggle("open", open);
   menuToggle.setAttribute("aria-expanded", String(open));
 });
 
-topNav.addEventListener("click", (event) => {
+topNav?.addEventListener("click", (event) => {
   if (event.target.matches("a")) {
     topNav.classList.remove("open");
     menuToggle.setAttribute("aria-expanded", "false");

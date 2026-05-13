@@ -1535,3 +1535,286 @@ h3 {
     animation: none !important;
   }
 }
+
+/* Thesis-driven final defense layout */
+.thesis-hero h1 {
+  max-width: 980px;
+}
+
+.research-layout,
+.foundation-story,
+.mechanism-layout,
+.boundary-tabs {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.85fr) minmax(420px, 1.15fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.thesis-card,
+.question-stack article,
+.foundation-grid article,
+.mechanism-card,
+.boundary-panel {
+  padding: clamp(22px, 3vw, 34px);
+  background: rgba(255, 250, 240, 0.94);
+  border: 1px solid rgba(23, 35, 31, 0.12);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  color: var(--ink);
+}
+
+.thesis-card .tag,
+.mechanism-card .tag {
+  color: var(--red);
+  font-weight: 900;
+}
+
+.thesis-card p,
+.question-stack strong,
+.mechanism-card p,
+.boundary-panel p {
+  color: #26342f;
+  line-height: 1.75;
+}
+
+.question-stack {
+  display: grid;
+  gap: 12px;
+}
+
+.question-stack article {
+  display: grid;
+  align-content: center;
+  min-height: 132px;
+  box-shadow: 0 16px 38px rgba(23, 35, 31, 0.12);
+}
+
+.question-stack span {
+  color: var(--red);
+  font-weight: 900;
+}
+
+.question-stack strong {
+  display: block;
+  margin-top: 8px;
+  font-size: clamp(19px, 2vw, 25px);
+}
+
+.theory-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.theory-strip article {
+  padding: 18px;
+  background: #102820;
+  border-radius: 8px;
+  color: var(--white);
+}
+
+.theory-strip span {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--gold);
+  font-weight: 900;
+}
+
+.theory-strip p {
+  margin-bottom: 0;
+  color: rgba(255, 250, 240, 0.94);
+  line-height: 1.68;
+}
+
+.foundation-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.foundation-grid article {
+  min-height: 250px;
+  box-shadow: 0 18px 50px rgba(118, 80, 18, 0.16);
+}
+
+.foundation-grid strong {
+  display: block;
+  color: var(--red);
+  font-size: clamp(42px, 5vw, 66px);
+  line-height: 1;
+}
+
+.foundation-grid span {
+  display: block;
+  margin-top: 8px;
+  color: #1e3029;
+  font-weight: 900;
+}
+
+.foundation-grid p {
+  margin: 18px 0 0;
+  color: #34453f;
+  line-height: 1.65;
+}
+
+.foundation-story {
+  margin-top: 20px;
+}
+
+.foundation-story figure {
+  min-height: 420px;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.foundation-story img {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  object-fit: cover;
+}
+
+.foundation-story > div {
+  padding: clamp(24px, 4vw, 42px);
+  background: rgba(255, 250, 240, 0.94);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.foundation-story ul,
+.mechanism-card ul {
+  display: grid;
+  gap: 12px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.foundation-story li,
+.mechanism-card li {
+  padding-left: 16px;
+  border-left: 4px solid var(--gold);
+  color: #26342f;
+  line-height: 1.66;
+}
+
+.mechanism-layout {
+  grid-template-columns: minmax(260px, 0.72fr) minmax(420px, 1.28fr);
+}
+
+.mechanism-list {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+
+.mechanism-btn {
+  min-height: 62px;
+  padding: 14px 16px;
+  text-align: left;
+  background: rgba(255, 250, 240, 0.94);
+  border: 1px solid rgba(255, 250, 240, 0.42);
+  border-radius: 8px;
+  color: #182b24;
+  font-weight: 900;
+  transition: 0.22s ease;
+}
+
+.mechanism-btn.active,
+.mechanism-btn:hover {
+  color: #fff;
+  background: var(--red);
+  transform: translateX(5px);
+}
+
+.mechanism-card {
+  min-height: 520px;
+}
+
+.mechanism-card h3,
+.boundary-panel h3 {
+  color: #102820;
+}
+
+.boundary-tabs {
+  grid-template-columns: minmax(220px, 0.45fr) minmax(420px, 1.55fr);
+}
+
+.boundary-panel {
+  min-height: 430px;
+}
+
+.principle-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.principle-grid span {
+  display: grid;
+  place-items: center;
+  min-height: 82px;
+  padding: 12px;
+  background: #e9dcc3;
+  border: 1px solid rgba(23, 35, 31, 0.12);
+  border-radius: 8px;
+  color: #102820;
+  font-weight: 900;
+  text-align: center;
+}
+
+.boundary-tabs .tab-list {
+  display: grid;
+  gap: 10px;
+}
+
+.thesis-rebuild .rebuild-meaning article strong {
+  font-size: clamp(18px, 1.8vw, 23px);
+}
+
+@media (max-width: 980px) {
+  .research-layout,
+  .foundation-story,
+  .mechanism-layout,
+  .boundary-tabs {
+    grid-template-columns: 1fr;
+  }
+
+  .foundation-grid,
+  .theory-strip,
+  .principle-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mechanism-card,
+  .boundary-panel {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .foundation-grid,
+  .theory-strip,
+  .principle-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .question-stack article,
+  .foundation-grid article {
+    min-height: auto;
+  }
+
+  .foundation-story figure,
+  .foundation-story img {
+    min-height: 260px;
+  }
+
+  .mechanism-btn {
+    min-height: 54px;
+  }
+}
